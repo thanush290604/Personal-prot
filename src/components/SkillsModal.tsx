@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Trophy, Award, FileText, Lightbulb, Briefcase } from 'lucide-react';
+import { X, Trophy, Award, FileText, Lightbulb, Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface SkillsModalProps {
   isOpen: boolean;
@@ -8,6 +8,7 @@ interface SkillsModalProps {
 
 const SkillsModal: React.FC<SkillsModalProps> = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState('certificates');
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const tabs = [
     { id: 'certificates', label: 'Certificates', icon: Trophy },
@@ -140,82 +141,187 @@ const SkillsModal: React.FC<SkillsModalProps> = ({ isOpen, onClose }) => {
     ]
   };
 
+  const currentContent = content[activeTab as keyof typeof content];
+
+  const openLightbox = (index: number) => {
+    setSelectedImage(index);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
+
+  const navigateImage = (direction: 'prev' | 'next') => {
+    if (selectedImage === null) return;
+    
+    const currentIndex = selectedImage;
+    const maxIndex = currentContent.length - 1;
+    
+    if (direction === 'prev') {
+      setSelectedImage(currentIndex > 0 ? currentIndex - 1 : maxIndex);
+    } else {
+      setSelectedImage(currentIndex < maxIndex ? currentIndex + 1 : 0);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div className="relative w-full max-w-7xl max-h-[90vh] bg-gradient-to-br from-black/90 to-gray-900/90 backdrop-blur-xl border border-cyan-400/30 rounded-2xl overflow-hidden animate-fade-in-up">
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-white/10">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Skills & Achievements
-          </h2>
-          <button
-            onClick={onClose}
-            className="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
-          >
-            <X size={24} />
-          </button>
-        </div>
+    <>
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div className="relative w-full max-w-7xl max-h-[90vh] bg-gradient-to-br from-black/90 to-gray-900/90 backdrop-blur-xl border border-cyan-400/30 rounded-2xl overflow-hidden animate-fade-in-up">
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 border-b border-white/10">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Skills & Achievements
+            </h2>
+            <button
+              onClick={onClose}
+              className="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+            >
+              <X size={24} />
+            </button>
+          </div>
 
-        {/* Tabs */}
-        <div className="flex flex-wrap gap-2 p-6 border-b border-white/10">
-          {tabs.map((tab) => {
-            const IconComponent = tab.icon;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  activeTab === tab.id
-                    ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                <IconComponent size={20} />
-                {tab.label}
-              </button>
-            );
-          })}
-        </div>
+          {/* Tabs */}
+          <div className="flex flex-wrap gap-2 p-6 border-b border-white/10">
+            {tabs.map((tab) => {
+              const IconComponent = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                    activeTab === tab.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <IconComponent size={20} />
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
 
-        {/* Content */}
-        <div className="p-6 overflow-y-auto max-h-96">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {content[activeTab as keyof typeof content].map((item, index) => (
-              <div
-                key={index}
-                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 hover:border-cyan-400/30 transition-all duration-300 hover:-translate-y-1"
-              >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/images/placeholder.jpg';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          {/* Content */}
+          <div className="p-6 overflow-y-auto max-h-96">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {currentContent.map((item, index) => (
+                <div
+                  key={index}
+                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 hover:border-cyan-400/30 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                >
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = '/images/placeholder.jpg';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
+                        <Trophy className="text-white" size={24} />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-cyan-400 mb-3 group-hover:text-cyan-300 transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed text-sm group-hover:text-gray-200 transition-colors duration-300">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-cyan-400 mb-3 group-hover:text-cyan-300 transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed text-sm group-hover:text-gray-200 transition-colors duration-300">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Certificate Lightbox Modal */}
+      {selectedImage !== null && (
+        <div className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="relative max-w-6xl max-h-[95vh] w-full">
+            {/* Close Button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 p-3 bg-black/70 backdrop-blur-sm text-white rounded-full hover:bg-black/80 transition-colors duration-200 hover:scale-110"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Navigation Buttons */}
+            {currentContent.length > 1 && (
+              <>
+                <button
+                  onClick={() => navigateImage('prev')}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/70 backdrop-blur-sm text-white rounded-full hover:bg-black/80 transition-all duration-200 hover:scale-110"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={() => navigateImage('next')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/70 backdrop-blur-sm text-white rounded-full hover:bg-black/80 transition-all duration-200 hover:scale-110"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </>
+            )}
+
+            {/* Certificate Image */}
+            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden animate-fade-in-up">
+              <div className="relative">
+                <img
+                  src={currentContent[selectedImage].image}
+                  alt={currentContent[selectedImage].title}
+                  className="w-full h-auto max-h-[75vh] object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/images/placeholder.jpg';
+                  }}
+                />
+              </div>
+              
+              {/* Certificate Info */}
+              <div className="p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-cyan-400/20 rounded-lg">
+                    <Trophy className="text-cyan-400" size={20} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">
+                    {currentContent[selectedImage].title}
+                  </h3>
+                </div>
+                <p className="text-gray-300 leading-relaxed text-lg">
+                  {currentContent[selectedImage].description}
+                </p>
+                
+                {/* Image Counter */}
+                {currentContent.length > 1 && (
+                  <div className="mt-4 text-center">
+                    <span className="text-cyan-400 font-medium">
+                      {selectedImage + 1} of {currentContent.length}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

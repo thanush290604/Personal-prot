@@ -6,19 +6,19 @@ const Experience: React.FC = () => {
       title: "Intern at G Cloud Networks",
       period: "Jun 2024 - Aug 2024",
       description: "Contributed to video editing, poster design, and website development. Assisted in various technical and creative projects, enhancing digital content and user engagement.",
-      logo: "https://drive.google.com/uc?export=view&id=1rwcXWGDMgHSJx7AM0VopaFQzpf2CrBn6"
+      logo: "/images/gcloud-logo.jpg"
     },
     {
       title: "SDG Researcher & Volunteer at IGEN",
       period: "Jul 2022 - Present",
       description: "Researched SDGs and contributed to AI-driven community safety projects. Developed websites for sustainability initiatives and organized key projects like IGEN MINUSCO2 and ENERGYTHON.",
-      logo: "https://drive.google.com/uc?export=view&id=1n73UIAZacqvfIZWfuQ8WW-m8CfuoCYWo"
+      logo: "/images/igen-logo.jpg"
     },
     {
       title: "Volunteer at Institution of Engineers (India)",
       period: "Jan 2023 - Jun 2024",
       description: "Contributed to poster designs for events and campaigns. Organized and managed events like ENVIRONTHON, promoting engineering and technology awareness.",
-      logo: "https://drive.google.com/uc?export=view&id=1h7ETqpDiZ2KiR4O245HvC2rv0oFQX2K1"
+      logo: "/images/iei-logo.jpg"
     }
   ];
 
@@ -67,7 +67,7 @@ const Experience: React.FC = () => {
                         className="w-full h-full object-contain rounded-lg"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMUExQTFBIiByeD0iOCIvPgo8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIxNiIgZmlsbD0iIzA2QjZENCIvPgo8L3N2Zz4K';
+                          target.src = '/images/placeholder.jpg';
                         }}
                       />
                     </div>

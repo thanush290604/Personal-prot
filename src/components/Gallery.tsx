@@ -17,7 +17,7 @@ const Gallery: React.FC = () => {
     // Dr. M.G.R. Educational And Research Institute
     {
       id: 1,
-      src: "https://drive.google.com/uc?export=view&id=1mwCPm_QPxqNoz-CX4YbxqWhqxQghum3V",
+      src: "/images/internship-ceremony.jpg",
       title: "Internship Completion Certificate Ceremony",
       category: "mgr",
       date: "2024",
@@ -26,7 +26,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 2,
-      src: "https://drive.google.com/uc?export=view&id=1w6cTco-yyMfHO9C8Qb4ZigQnDs6no1Kj",
+      src: "/images/internship-team.jpg",
       title: "Internship Team Group Photo",
       category: "mgr",
       date: "2024",
@@ -35,7 +35,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 3,
-      src: "https://drive.google.com/uc?export=view&id=1IG-y8ZyBhV9RGHlYUdQvUdYzDY_Jqc2v",
+      src: "/images/green-leader-completion.jpg",
       title: "10 Billion Green Leader Academy Course Completion",
       category: "mgr",
       date: "2024",
@@ -44,7 +44,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 4,
-      src: "https://drive.google.com/uc?export=view&id=1TID-l-ajZFOD3kWxbQhI_wbck-DU9hVp",
+      src: "/images/green-leader-group1.jpg",
       title: "Green Leader Academy - Group Photo 1",
       category: "mgr",
       date: "2024",
@@ -53,7 +53,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 5,
-      src: "https://drive.google.com/uc?export=view&id=1uJp-REFXG3kvA5WymL4DiyGMA6ktqy2I",
+      src: "/images/green-leader-group2.jpg",
       title: "Green Leader Academy - Group Photo 2",
       category: "mgr",
       date: "2024",
@@ -62,7 +62,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 6,
-      src: "https://drive.google.com/uc?export=view&id=1flDYE0KiQxrzjpIM1Niu4Q648JraZMEc",
+      src: "/images/robotz-volunteer.jpg",
       title: "ROBOTZINDIA.in V9.0 Volunteer",
       category: "mgr",
       date: "2024",
@@ -71,7 +71,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 7,
-      src: "https://drive.google.com/uc?export=view&id=1urB5wSBOxTYWtMBWq_s7iqrP4DBOq3b9",
+      src: "/images/robotz-team.jpg",
       title: "ROBOTZINDIA.in V9.0 - Team Photo",
       category: "mgr",
       date: "2024",
@@ -80,7 +80,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 8,
-      src: "https://drive.google.com/uc?export=view&id=1tLFIc0Sc_vA2AsaFN4lDXeLHEPcthPHd",
+      src: "/images/google-cloud-completion.jpg",
       title: "Google Cloud Study Jam Completion",
       category: "mgr",
       date: "2024",
@@ -89,7 +89,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 9,
-      src: "https://drive.google.com/uc?export=view&id=1293MlkpZks907muPOjCx3UUA5mQ6SZ3O",
+      src: "/images/google-cloud-certificate.jpg",
       title: "Google Cloud Study Jam - Certificate",
       category: "mgr",
       date: "2024",
@@ -98,7 +98,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 10,
-      src: "https://drive.google.com/uc?export=view&id=15knVrp28L1ckYwLj80KXiFOzKWOAIVlV",
+      src: "/images/devfest-2023.jpg",
       title: "DevFest 2023 at IIT Madras",
       category: "mgr",
       date: "2023",
@@ -107,7 +107,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 11,
-      src: "https://drive.google.com/uc?export=view&id=1CfXe81HC6qPyM9_jPfEW8ytIOXRXQRwq",
+      src: "/images/ai-safety-presentation.jpg",
       title: "AI-Driven Smart Safety Framework Presentation",
       category: "mgr",
       date: "2024",
@@ -116,7 +116,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 12,
-      src: "https://drive.google.com/uc?export=view&id=1XI01mzsQFBZdGY8LiIlQaRcVZw8dxiUv",
+      src: "/images/ai-safety-group.jpg",
       title: "AI Safety Framework - Group Photo",
       category: "mgr",
       date: "2024",
@@ -127,7 +127,7 @@ const Gallery: React.FC = () => {
     // IGEN Category
     {
       id: 13,
-      src: "https://drive.google.com/uc?export=view&id=1XEIc_DFR2ZW3NJphp2Wjq9LES0YNGTTD",
+      src: "/images/ensav-induction.jpg",
       title: "ENSAV CLUB Induction Program",
       category: "igen",
       date: "2022",
@@ -136,7 +136,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 14,
-      src: "https://drive.google.com/uc?export=view&id=11kSffLmHGo79g0CFXX50oPfvR9eJcRqI",
+      src: "/images/ensav-group.jpg",
       title: "ENSAV CLUB Induction - Group Photo",
       category: "igen",
       date: "2022",
@@ -145,7 +145,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 15,
-      src: "https://drive.google.com/uc?export=view&id=16baRCJpvy7iYCu4RAdHkOpP5bbcTpKxu",
+      src: "/images/sdg4mgr-campaign.jpg",
       title: "SDG4MGR Campaign Participation",
       category: "igen",
       date: "2023",
@@ -154,7 +154,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 16,
-      src: "https://drive.google.com/uc?export=view&id=1-FTZjqyyjM3PQ304oapChdE9W_vk0m0v",
+      src: "/images/sdg4mgr-individual.jpg",
       title: "SDG4MGR Campaign - Individual Photo",
       category: "igen",
       date: "2023",
@@ -163,7 +163,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 17,
-      src: "https://drive.google.com/uc?export=view&id=1Vs8Cc9HsVwNA3fMQsaacne6tlKNPZQ7j",
+      src: "/images/sdg4mgr-group.jpg",
       title: "SDG4MGR Campaign - Group Photo",
       category: "igen",
       date: "2023",
@@ -172,7 +172,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 18,
-      src: "https://drive.google.com/uc?export=view&id=1-4OC95cAs0Jc_RhBSZRZFxZC_5m10WvW",
+      src: "/images/energathon-winners.jpg",
       title: "IGEN ENERGATHON 2023 Winners Valedictory",
       category: "igen",
       date: "2023",
@@ -181,7 +181,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 19,
-      src: "https://drive.google.com/uc?export=view&id=1O1sEbXI0zJaDLzAN3A4v3rRlgPus_jm0",
+      src: "/images/g20-youth-speaker.jpg",
       title: "G20 Youth Speaker Recognition",
       category: "igen",
       date: "2023",
@@ -190,7 +190,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 20,
-      src: "https://drive.google.com/uc?export=view&id=1BHRWf-psDQEnJm3ZSTDvKAcWZLdjt5b-",
+      src: "/images/g20-youth-group.jpg",
       title: "G20 Youth Speaker - Group Photo",
       category: "igen",
       date: "2023",
@@ -199,7 +199,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 21,
-      src: "https://drive.google.com/uc?export=view&id=1_f1U3vM7ruUWsfIKVoMbxSimfyLMShm2",
+      src: "/images/youth-peace-building.jpg",
       title: "Youth and Peace Building Training",
       category: "igen",
       date: "2024",
@@ -210,7 +210,7 @@ const Gallery: React.FC = () => {
     // Presentation Photos
     {
       id: 22,
-      src: "https://drive.google.com/uc?export=view&id=1S_M0g2Yl51N3ldJyHsE_5FldETtjaeHg",
+      src: "/images/best-paper-award.jpg",
       title: "Best Paper Award - ICDSBS 2025",
       category: "presentation",
       date: "2025",
@@ -219,7 +219,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: 23,
-      src: "https://drive.google.com/uc?export=view&id=1JO8AxBn3AzfTZzDn6sW85jEI0uVme2-h",
+      src: "/images/sustained2024-presentation.jpg",
       title: "SUSTAINED2024 Conference Presentation",
       category: "presentation",
       date: "2024",
@@ -315,7 +315,7 @@ const Gallery: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDMwMCAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjU2IiBmaWxsPSIjMUExQTFBIi8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEyOCIgcj0iNDAiIGZpbGw9IiMwNkI2RDQiLz4KPHRleHQgeD0iMTUwIiB5PSIxODAiIGZpbGw9IiMwNkI2RDQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiPkdhbGxlcnkgSW1hZ2U8L3RleHQ+Cjwvc3ZnPgo=';
+                    target.src = '/images/placeholder.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

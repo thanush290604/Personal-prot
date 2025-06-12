@@ -31,12 +31,12 @@ const Hero: React.FC = () => {
               <div className="relative bg-gradient-to-br from-cyan-500/20 to-purple-500/20 p-1 rounded-2xl backdrop-blur-sm">
                 <div className="relative overflow-hidden rounded-xl">
                   <img
-                    src="https://drive.google.com/uc?export=view&id=16PmxSEidPhkpjYuhqpnTo05Dq5uR05_L"
+                    src="/images/profile.jpg"
                     alt="Thanush Kannan"
                     className="w-72 h-72 object-cover transition-transform duration-300 group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMUExQTFBIi8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEyMCIgcj0iNDAiIGZpbGw9IiMwNkI2RDQiLz4KPHBhdGggZD0iTTEwMCAyMDBDMTAwIDE3Ny45MSAxMTcuOTEgMTYwIDEzOSAxNjBIMTYxQzE4Mi4wOSAxNjAgMjAwIDE3Ny45MSAyMDAgMjAwVjI0MEgxMDBWMjAwWiIgZmlsbD0iIzA2QjZENCIvPgo8L3N2Zz4K';
+                      target.src = '/images/placeholder.jpg';
                     }}
                   />
                   {/* Overlay Effect */}
